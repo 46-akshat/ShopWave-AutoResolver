@@ -1,0 +1,33 @@
+Phase 1: Foundation & The "Sloppy" Mocks (CLI)
+Goal: Set up the environment and build tools that intentionally fail, forcing the agent to think.
+Repository Setup: Initialize the project structure (core/, data/, main.py).
+Environment Variables: Secure your Gemini API key in a .env file to immediately satisfy the "Fatal" security rule.
+Mock Implementation: Write the async Python functions for get_order, check_refund_eligibility, etc..
+Inject Failure: Add random delays, TimeoutError exceptions, and malformed JSON returns to the mock tools to test recovery mechanics.
+
+Phase 2: The Reasoning Engine (CLI)
+Goal: Wire up Gemini and LangGraph to create an agent that explains its decisions and handles the mock failures.
+State Definition: Define the LangGraph State dictionary (e.g., tracking the ticket details, intermediate tool outputs, and current confidence level).
+Tool Binding: Bind your mock tools to the gemini-1.5-pro model.
+System Prompting: Craft a strict system instruction demanding the agent log its internal monologue and self-evaluate its confidence before taking action.
+The ReAct Loop: Build the core LangGraph nodes:
+Agent Node: Evaluates the ticket and decides which tool to call (or if it should escalate).
+Tool Node: Executes the tool. Crucially, wrap this in a try/except block to catch the errors from Phase 1 and return them to the agent as "observations" so it can recover.
+
+Phase 3: Concurrency & The Audit Trail (CLI)
+Goal: Process all 20 tickets simultaneously and prove the agent's work.
+Async Orchestration: In main.py, use asyncio.gather() to feed the 20 sample tickets into the LangGraph engine concurrently.
+Logging Mechanism: Implement a centralized logger that captures every thought, tool input, tool output, and final decision.
+JSON Export: Ensure the run cleanly outputs the exact audit_log.json required for submission.
+
+Phase 4: Hackathon Deliverables (Documentation)
+Goal: Secure the documentation points before touching any bonus features.
+README.md: Write clear, single-command setup and run instructions.
+Failure Analysis: Document the 3 specific failure scenarios you engineered in Phase 1 and explain how your agent loop handles them in failure_modes.md.
+Architecture Verification: Ensure your design matches the expected loops and state management.
+
+Phase 5: The React Frontend (Bonus)
+Goal: Add a visual layer for the demo run.
+FastAPI Wrapper: Wrap your asyncio.gather() script in a lightweight FastAPI endpoint.
+React Dashboard: Build a simple UI with a "Run Agent" button.
+Real-time Visualization: (Optional but impactful) Stream the tool execution logs to the UI so the judges can watch the concurrent processing happen live...

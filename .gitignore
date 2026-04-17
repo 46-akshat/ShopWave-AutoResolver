@@ -1,0 +1,16 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Environment Variables (Crucial!)
+.env
+
+# IDE specific files
+.vscode/
+
+# Local dev and visualization scripts
+test.py
+visualize.py
