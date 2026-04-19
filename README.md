@@ -4,6 +4,10 @@ ShopWave AI is a high-performance, autonomous customer support system built with
 
 ---
 
+# Demo Video
+
+https://www.loom.com/share/837493214e0f48cba1992d686b5883b9
+
 ## 🌟 Key Features
 
 - **Autonomous Decision Making** — Uses LLM-driven agents to decide whether to refund, deny, or escalate based on context.
