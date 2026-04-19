@@ -104,3 +104,21 @@ hackathon2026-agent/
 
 - **Human-in-the-loop** — All warranty claims and refunds over $200 are automatically escalated to human agents.
 - **Data Integrity** — The agent cannot modify order data directly; it only triggers pre-validated tool calls based on system records.
+
+---
+
+## 🔮 Future Updates
+
+### Frontend Dashboard (In Progress)
+
+A React-based observability dashboard is being built under the `frontend/` directory to visualize agent decisions in real time.
+
+**Planned features:**
+
+- Live ticket feed with auto-resolved / escalated status indicators
+- Per-ticket drill-down showing the agent's reasoning chain and tool calls
+- Audit log viewer with filtering and search
+- Real-time metrics (resolution rate, avg. processing time, escalation %)
+- WebSocket integration for live updates as the agent processes tickets
+
+**Stack:** React, Vite, Tailwind CSS, lucide-react
