@@ -122,3 +122,32 @@ A React-based observability dashboard is being built under the `frontend/` direc
 - WebSocket integration for live updates as the agent processes tickets
 
 **Stack:** React, Vite, Tailwind CSS, lucide-react
+
+
+---
+
+## 🔧 Git Workflow
+
+```bash
+# Clone the repository
+git clone <repo-url>
+cd hackathon2026-agent
+
+# Check status
+git status
+
+# Stage and commit changes
+git add .
+git commit -m "your message"
+
+# Push to remote
+git push origin main
+
+# If push is rejected (remote has new commits), rebase and push
+git pull --rebase origin main
+git push origin main
+
+# Resolve conflicts during rebase (if any)
+git add <conflicted-file>
+git rebase --continue
+```
