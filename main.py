@@ -126,6 +126,8 @@ async def process_single_ticket(ticket):
 
     # Formatting cleanup
     final_message = str(final_message).replace('\\n', '\n').replace('\\"', '"').strip()
+    
+  
 
     duration = round(time.time() - start_time, 2)
     print(f"✅ Finished {ticket_id} in {duration}s")
