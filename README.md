@@ -25,7 +25,7 @@ ShopWave AI is a high-performance, autonomous customer support system built with
 
 ---
 
-#Architecture Diagram/System Architecture:
+# Architecture Diagram/System Architecture:
 
 <img width="1961" height="931" alt="architecture" src="https://github.com/user-attachments/assets/41816653-dc4e-4337-afb9-23437878cebd" />
 
