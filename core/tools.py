@@ -294,9 +294,7 @@ async def check_refund_eligibility(order_id: str, customer_email: str = None) ->
     if order.get("refund_status") == "refunded":
         return {"eligible": False, "reason": "FRAUD/CONFLICT: Order already refunded in system."}
 
-    # ==========================================
-    # ✅ FIXED FRAUD LOGIC FOR TICKET 001
-    # ==========================================
+   
     if customer_email and customer_email in CUSTOMERS_DB:
         hist = CUSTOMERS_DB[customer_email].get("notes", "").lower()
         

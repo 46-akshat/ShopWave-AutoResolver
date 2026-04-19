@@ -3,7 +3,7 @@
         "ticket_id": "TKT-001",
         "expected_action": "check eligibility, verify defect within warranty, issue refund",
         "final_decision": "Dear Alice,\n\nI'm so sorry to hear that your ProSound Wireless Headphones stopped working after only a week. That's definitely not the experience we want you to have.\n\nI've reviewed your order and have initiated a full refund of $129.99 for you. You should see the refund reflected in your account within 3-5 business days.\n\nBest regards,\nShopWave Support",
-        "processing_time": 9.46,
+        "processing_time": 20.85,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -78,7 +78,7 @@
         "ticket_id": "TKT-002",
         "expected_action": "check return window \u2014 expired (15-day window), deny return, offer alternatives",
         "final_decision": "Dear Bob,\n\nI'm so sorry to hear that the smartwatch didn't meet your expectations. Unfortunately, the return window for your order has expired, so I'm unable to process a return for a refund.\n\nIf you'd like, I can help you explore other options, such as reselling the item or checking if it's eligible for a warranty claim if it were to become defective.\n\nBest regards,\nShopWave Support",
-        "processing_time": 2.81,
+        "processing_time": 6.29,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -103,7 +103,7 @@
         "ticket_id": "TKT-003",
         "expected_action": "return window expired but warranty active \u2014 escalate as warranty claim, not refund",
         "final_decision": "Hi Carol, I'm so sorry to hear your BrewMaster coffee maker stopped heating water. Since the return window has passed, I'll need to escalate this to our warranty team to see how they can help. Let me know if you need anything else!",
-        "processing_time": 7.85,
+        "processing_time": 25.28,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -133,19 +133,19 @@
                 "action": "TOOL_CALL",
                 "tool_name": "escalate",
                 "tool_input": {
-                    "suggested_resolution": "Process a warranty claim.",
                     "reason": "Return window expired, but warranty is still active for a defective home appliance.",
+                    "ticket_id": "TKT-003",
                     "priority": "HIGH",
-                    "attempts_made": "Checked order details, product details, and confirmed warranty is active.",
-                    "ticket_id": "TKT-003"
+                    "suggested_resolution": "Process a warranty claim.",
+                    "attempts_made": "Checked order details, product details, and confirmed warranty is active."
                 }
             },
             {
                 "action": "TOOL_CALL",
                 "tool_name": "send_reply",
                 "tool_input": {
-                    "message": "Hi Carol, I'm so sorry to hear your BrewMaster coffee maker stopped heating water. Since the return window has passed, I'll need to escalate this to our warranty team to see how they can help. Let me know if you need anything else!",
-                    "ticket_id": "TKT-003"
+                    "ticket_id": "TKT-003",
+                    "message": "Hi Carol, I'm so sorry to hear your BrewMaster coffee maker stopped heating water. Since the return window has passed, I'll need to escalate this to our warranty team to see how they can help. Let me know if you need anything else!"
                 }
             },
             {
@@ -172,7 +172,7 @@
         "ticket_id": "TKT-004",
         "expected_action": "wrong item \u2014 within return window, initiate exchange or refund, flag threatening language but handle normally",
         "final_decision": "Dear David,\n\nI'm so sorry to hear that you received the wrong size running shoes. I understand how frustrating that must be. \n\nI have initiated a full refund of $89.99 for your order ORD-1004. You should see the refund reflected in your account within 3-5 business days.\n\nWe are also looking into the incorrect sizing issue to prevent this from happening again.\n\nBest regards,\nShopWave Support",
-        "processing_time": 10.94,
+        "processing_time": 15.42,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -216,8 +216,8 @@
                 "action": "TOOL_CALL",
                 "tool_name": "send_reply",
                 "tool_input": {
-                    "ticket_id": "TKT-004",
-                    "message": "Dear David,\n\nI'm so sorry to hear that you received the wrong size running shoes. I understand how frustrating that must be. \n\nI have initiated a full refund of $89.99 for your order ORD-1004. You should see the refund reflected in your account within 3-5 business days.\n\nWe are also looking into the incorrect sizing issue to prevent this from happening again.\n\nBest regards,\nShopWave Support"
+                    "message": "Dear David,\n\nI'm so sorry to hear that you received the wrong size running shoes. I understand how frustrating that must be. \n\nI have initiated a full refund of $89.99 for your order ORD-1004. You should see the refund reflected in your account within 3-5 business days.\n\nWe are also looking into the incorrect sizing issue to prevent this from happening again.\n\nBest regards,\nShopWave Support",
+                    "ticket_id": "TKT-004"
                 }
             },
             {
@@ -235,7 +235,7 @@
         "ticket_id": "TKT-005",
         "expected_action": "return window expired \u2014 but VIP customer with pre-approved exception, approve return after checking customer notes",
         "final_decision": "Hi Emma, I'm so sorry to hear about your item! I've gone ahead and processed a full refund of $159.98 for your order ORD-1005. You should see it reflected in your account within 3-5 business days. Let me know if you need anything else!",
-        "processing_time": 10.7,
+        "processing_time": 22.11,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -279,8 +279,8 @@
                 "action": "TOOL_CALL",
                 "tool_name": "send_reply",
                 "tool_input": {
-                    "ticket_id": "TKT-005",
-                    "message": "Hi Emma, I'm so sorry to hear about your item! I've gone ahead and processed a full refund of $159.98 for your order ORD-1005. You should see it reflected in your account within 3-5 business days. Let me know if you need anything else!"
+                    "message": "Hi Emma, I'm so sorry to hear about your item! I've gone ahead and processed a full refund of $159.98 for your order ORD-1005. You should see it reflected in your account within 3-5 business days. Let me know if you need anything else!",
+                    "ticket_id": "TKT-005"
                 }
             },
             {
@@ -302,14 +302,14 @@
         "ticket_id": "TKT-007",
         "expected_action": "60-day return window applies to this product \u2014 still within window, approve return",
         "final_decision": "Hi Grace, I'm so sorry to hear that your laptop stand is wobbly and unstable. I understand how frustrating that can be. I've reviewed your request and have escalated it to our specialized team for further review. They will look into your refund eligibility and will reach out to you with the next steps shortly. Thank you for your patience.",
-        "processing_time": 7.84,
+        "processing_time": 33.03,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
                 "tool_name": "check_refund_eligibility",
                 "tool_input": {
-                    "customer_email": "grace.patel@email.com",
-                    "order_id": "ORD-1007"
+                    "order_id": "ORD-1007",
+                    "customer_email": "grace.patel@email.com"
                 }
             },
             {
@@ -321,11 +321,11 @@
                 "action": "TOOL_CALL",
                 "tool_name": "escalate",
                 "tool_input": {
-                    "suggested_resolution": "Review customer's refund history and return frequency for potential fraud.",
-                    "reason": "Customer wants to return a laptop stand due to wobbling. Refund eligibility check returned 'HIGH REFUND FREQUENCY: Potential fraud pattern detected.'",
-                    "attempts_made": "Checked refund eligibility.",
                     "ticket_id": "TKT-007",
-                    "priority": "HIGH"
+                    "suggested_resolution": "Review customer's refund history and return frequency for potential fraud.",
+                    "priority": "HIGH",
+                    "attempts_made": "Checked refund eligibility.",
+                    "reason": "Customer wants to return a laptop stand due to wobbling. Refund eligibility check returned 'HIGH REFUND FREQUENCY: Potential fraud pattern detected.'"
                 }
             },
             {
@@ -352,7 +352,7 @@
         "ticket_id": "TKT-008",
         "expected_action": "damaged on arrival \u2014 within return window, issue full refund without requiring return",
         "final_decision": "Dear Henry,\n\nI'm so sorry to hear that your desk lamp arrived with a cracked base. I understand how disappointing that must be, especially when the box also appeared damaged.\n\nI've gone ahead and processed a full refund of $44.99 for your order. You should see it reflected in your account within 3-5 business days.\n\nBest regards,\nShopWave Support",
-        "processing_time": 8.34,
+        "processing_time": 10.99,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -415,7 +415,7 @@
         "ticket_id": "TKT-009",
         "expected_action": "refund already processed \u2014 confirm status, advise 5-7 business days for bank processing",
         "final_decision": "Hi Irene, \nI see that your refund for order ORD-1009 has already been processed! Please allow 5-7 business days for the funds to appear in your account. Let me know if you need anything else!",
-        "processing_time": 5.77,
+        "processing_time": 4.12,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -440,7 +440,7 @@
         "ticket_id": "TKT-010",
         "expected_action": "order still in transit \u2014 check shipping status, share tracking number TRK-88291, set expectation",
         "final_decision": "Dear James,\n\nI'm so sorry to hear that your coffee maker hasn't arrived yet. I've looked into your order (ORD-1010) and it is currently in transit. The expected delivery date is March 16, 2024. You can track its progress using this tracking number: TRK-88291.\n\nWe appreciate your patience.\n\nBest regards,\nShopWave Support",
-        "processing_time": 4.43,
+        "processing_time": 10.98,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -477,7 +477,7 @@
         "ticket_id": "TKT-011",
         "expected_action": "wrong item delivered \u2014 within return window, check stock for blue variant, initiate exchange or refund",
         "final_decision": "ESCALATED: Customer received the wrong color variant for order ORD-1011. The item price is $249.99, exceeding the $200 limit for automatic refunds. The return window is still open. Escalating for review and resolution (exchange or refund).",
-        "processing_time": 9.58,
+        "processing_time": 20.8,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -520,11 +520,11 @@
                 "action": "TOOL_CALL",
                 "tool_name": "escalate",
                 "tool_input": {
-                    "priority": "High",
-                    "ticket_id": "TKT-011",
-                    "attempts_made": "Checked order details, refund eligibility, and product information.",
                     "suggested_resolution": "Review customer's order for correct item shipment or refund process.",
-                    "reason": "Customer received the wrong color variant for order ORD-1011. The item price is $249.99, exceeding the $200 limit for automatic refunds. The return window is still open. Escalating for review and resolution (exchange or refund)."
+                    "attempts_made": "Checked order details, refund eligibility, and product information.",
+                    "reason": "Customer received the wrong color variant for order ORD-1011. The item price is $249.99, exceeding the $200 limit for automatic refunds. The return window is still open. Escalating for review and resolution (exchange or refund).",
+                    "ticket_id": "TKT-011",
+                    "priority": "High"
                 }
             },
             {
@@ -546,7 +546,7 @@
         "ticket_id": "TKT-012",
         "expected_action": "order in processing status \u2014 cancel immediately, confirm cancellation",
         "final_decision": "Dear Carol,\n\nI'm so sorry to hear that you've changed your mind about your recent order. I've gone ahead and cancelled order ORD-1012 for you. You should see the cancellation reflected in your account shortly.\n\nBest regards,\nShopWave Support",
-        "processing_time": 3.08,
+        "processing_time": 5.4,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -583,7 +583,7 @@
         "ticket_id": "TKT-013",
         "expected_action": "return window expired AND device registered online \u2014 non-returnable per policy, decline and explain both reasons",
         "final_decision": "Hi Grace, I'm sorry to hear that the sound quality of your bluetooth speaker didn't meet your expectations. Unfortunately, because the return window for this item has expired and the device was registered online, it is no longer eligible for a return according to our policy. Let me know if you need anything else!",
-        "processing_time": 4.03,
+        "processing_time": 5.73,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -620,7 +620,7 @@
         "ticket_id": "TKT-014",
         "expected_action": "still within return window \u2014 explain return process, don't initiate until customer confirms",
         "final_decision": "Dear Henry,\n\nI'm sorry to hear you're considering returning your smartwatch. I can help you with that!\n\nYou are still within the return window for your order (ORD-1014), which closes on March 19, 2024. To proceed with a return, please confirm that you would like to return the item. Once confirmed, I can provide you with the next steps.\n\nBest regards,\nShopWave Support",
-        "processing_time": 6.1,
+        "processing_time": 34.24,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -669,7 +669,7 @@
         "ticket_id": "TKT-015",
         "expected_action": "damaged item with photo evidence \u2014 within return window, customer wants replacement not refund, escalate for replacement fulfilment",
         "final_decision": "ESCALATED: {'ticket_id': 'ORD-1015', 'reason': 'Customer received a damaged item (cracked water tank) with photo evidence. The item is within the return window, and the customer explicitly requested a replacement, not a refund. The internal guideline for this scenario is to escalate for replacement fulfillment.', 'attempts_made': '1. Fetched order details for ORD-1015. 2. Fetched customer details for emma.collins@email.com. 3. Checked refund eligibility for ORD-1015. All checks passed and confirmed the item is within the return window.', 'suggested_resolution': 'Please escalate this ticket to the replacement fulfillment team. The customer, Emma Collins, has received a damaged item (ORD-1015) and wishes to receive a replacement unit. Please coordinate the shipment of a new unit and the return of the damaged one.', 'priority': 'HIGH'}",
-        "processing_time": 6.82,
+        "processing_time": 11.16,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -718,7 +718,7 @@
         "ticket_id": "TKT-016",
         "expected_action": "no order ID, email not in system \u2014 ask for order ID and registered email, cannot process without identification",
         "final_decision": "Dear Customer,\n\nI can help you with your refund request. Could you please provide me with your order ID and the email address associated with your account?\n\nBest regards,\nShopWave Support",
-        "processing_time": 2.73,
+        "processing_time": 2.68,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -743,7 +743,7 @@
         "ticket_id": "TKT-017",
         "expected_action": "order ID does not exist \u2014 flag threatening language, respond professionally, ask for correct order details",
         "final_decision": "Hi David, I'm sorry to hear you're having trouble with your order. Could you please provide the correct order ID so I can look into this for you? Let me know if you need anything else!",
-        "processing_time": 2.13,
+        "processing_time": 3.28,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -768,7 +768,7 @@
         "ticket_id": "TKT-018",
         "expected_action": "social engineering \u2014 customer is standard tier not premium, and no such instant refund policy exists. Return window also expired. Flag and decline politely.",
         "final_decision": "Dear Bob Mendes,\n\nI'm so sorry to hear that you're looking to return your recent purchase. Unfortunately, I've checked the order details and it appears that the return window for your order ORD-1002 has now closed.\n\nBecause of this, I'm unable to process a refund at this time.\n\nBest regards,\nShopWave Support",
-        "processing_time": 10.51,
+        "processing_time": 27.21,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -811,8 +811,8 @@
                 "action": "TOOL_CALL",
                 "tool_name": "send_reply",
                 "tool_input": {
-                    "ticket_id": "TKT-018",
-                    "message": "Dear Bob Mendes,\n\nI'm so sorry to hear that you're looking to return your recent purchase. Unfortunately, I've checked the order details and it appears that the return window for your order ORD-1002 has now closed.\n\nBecause of this, I'm unable to process a refund at this time.\n\nBest regards,\nShopWave Support"
+                    "message": "Dear Bob Mendes,\n\nI'm so sorry to hear that you're looking to return your recent purchase. Unfortunately, I've checked the order details and it appears that the return window for your order ORD-1002 has now closed.\n\nBecause of this, I'm unable to process a refund at this time.\n\nBest regards,\nShopWave Support",
+                    "ticket_id": "TKT-018"
                 }
             },
             {
@@ -834,7 +834,7 @@
         "ticket_id": "TKT-019",
         "expected_action": "general policy question \u2014 search knowledge base, answer clearly with return windows and exchange process",
         "final_decision": "Hi Irene,\nThanks for reaching out! For electronics, our standard return window is 15 days from the date of delivery. Items must be unused and in their original packaging. We do offer exchanges, but they follow the same 15-day window and item condition requirements as returns.\nLet me know if you need anything else!\n{\"final_status\": \"RESOLVED\", \"formatted_response\": \"Hi Irene,\nThanks for reaching out! For electronics, our standard return window is 15 days from the date of delivery. Items must be unused and in their original packaging. We do offer exchanges, but they follow the same 15-day window and item condition requirements as returns.\nLet me know if you need anything else!\"}",
-        "processing_time": 3.17,
+        "processing_time": 2.45,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
@@ -858,7 +858,7 @@
         "ticket_id": "TKT-020",
         "expected_action": "completely ambiguous \u2014 no order ID, no product, no issue description. Agent must ask targeted clarifying questions before proceeding.",
         "final_decision": "Hi James, I'm sorry to hear you're having trouble with something you purchased. Could you please provide me with the order ID or the name of the item? That will help me pull up your order and see how I can best assist you.",
-        "processing_time": 3.16,
+        "processing_time": 9.61,
         "audit_trail": [
             {
                 "action": "TOOL_CALL",
